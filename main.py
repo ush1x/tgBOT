@@ -48,10 +48,9 @@ def print_weather(message):
         if el['city'] == city:
             lat = el['lat']
             lon = el['lon']
-            
-
+    
     if lat == 0 or lon == 0:
-        bot.send_message(message.chat.id, 'Город не найден')
+        bot.send_message(message.chat.id, 'Город не найден!')
     else:
         headers={"Content-Type":"application/json", "X-Yandex-API-Key":"39f8ad18-41d5-4dd6-a3ce-646982ac197f"}
         params={"lat":lat, "lon":lon}
